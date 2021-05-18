@@ -15,7 +15,6 @@ const GlobalStyle = createGlobalStyle`
   a:link{
     text-decoration: none;
   }
-
 `;
  
 export default GlobalStyle;

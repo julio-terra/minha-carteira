@@ -1,11 +1,18 @@
-import React, { useState } from 'react';
+import React from 'react';
+
 import { useAuth } from '../../hooks/auth';
-import Login from '../Login';
-import Sidebar1 from '../../components/Sidebar1'
-import Sidebar2 from '../../components/Sidebar2';
-import { Container, Box, PageContainer } from './styles';
 import { useBar } from '../../hooks/bar'
+
 import Header from '../../components/Header';
+import Sidebar1 from '../../components/Sidebar1';
+import Sidebar2 from '../../components/Sidebar2';
+
+import Login from '../Login';
+
+import {Container,
+        Box,
+        PageContainer
+    } from './styles';
 
 const Exits: React.FC = () => {
     const { oppen } = useBar();
@@ -19,7 +26,7 @@ const Exits: React.FC = () => {
             <Box>
                 <Header />
                 <PageContainer>
-                    <h1>saidas</h1>
+                    <h1>em breve...</h1>
                 </PageContainer>
             </Box>
         </Container>

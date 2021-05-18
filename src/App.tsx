@@ -3,14 +3,17 @@ import {
     BrowserRouter as Router,
     Switch,
     Route,
-    Link
-  } from "react-router-dom";
-import { AuthProvider } from './hooks/auth';
-import { BarProvider} from './hooks/bar';
+} from "react-router-dom";
+
+import GlobalStyle from './styles/global';
+
+
 import Appetizer from './pages/Appetizer';
 import Dashboard from './pages/Dashboard';
 import Exits from './pages/Exits';
-import GlobalStyle from './styles/global';
+
+import { BarProvider} from './hooks/bar';
+import { AuthProvider } from './hooks/auth';
 
 const App: React.FC = () => {
   return (

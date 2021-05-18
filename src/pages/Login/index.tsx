@@ -1,16 +1,19 @@
 import React, { useState } from 'react';
-import Dollar from '../../assets/dollar.svg'
+import { useAuth } from '../../hooks/auth';
 
-import { Container, LoginBox, TittleBox, Tittle, IconBox, Icon,
-  EnterTittle, Input, InputBox, Button
+import Dollar from '../../assets/dollar.svg';
 
-} from './styles';
-import { useAuth } from '../../hooks/auth'
+import { Container, LoginBox, TittleBox, Tittle, IconBox, Icon,EnterTittle, Input, InputBox, Button } from './styles';
  
 const Login: React.FC = () => {
+  
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
+
   const { signIn} = useAuth();
+
+
+
   return (
     <Container>
       <TittleBox>
@@ -27,11 +30,15 @@ const Login: React.FC = () => {
           <Input
           onChange={e => setEmail(e.target.value)}
           placeholder="email"
-          ></Input>
+          >
+
+          </Input>
           <Input
           onChange={e => setPassword(e.target.value)}
           placeholder="senha" type="password"
-          ></Input>
+          >
+
+          </Input>
           <Button type="submit"
           >Acessar</Button>
         </InputBox>

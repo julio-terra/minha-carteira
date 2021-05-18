@@ -12,5 +12,10 @@ export const PageContainer = styled.div`
   width: 100%;
   height: 100%;
   background-color: ${colors.primaryGradient};
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   position: fixed;
 `;

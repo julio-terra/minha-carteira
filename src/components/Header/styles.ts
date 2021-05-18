@@ -9,8 +9,11 @@ export const Container = styled.div`
     border-bottom: 0.1px solid white;
 
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
+    
+    position: fixed;
+    
 `;
 export const OlaName = styled.p`
     color: white;

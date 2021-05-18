@@ -1,17 +1,24 @@
 import React from 'react';
-import Logo from '../../assets/logo.svg';
-import { Container, NavSection, IconSection, Icon, Label, LogoutSection } from './styles';
-import MenuOpenIcon from '@material-ui/icons/MenuOpen';
 import { Link } from 'react-router-dom';
 
+import { useAuth } from '../../hooks/auth';
+import { useBar } from '../../hooks/bar';
+
+import MenuOpenIcon from '@material-ui/icons/MenuOpen';
+
+import Logo from '../../assets/logo.svg';
 import ArrowUp from '../../assets/arrow-up.svg';
 import ArrowDown from '../../assets/arrow-down.svg';
-import { useAuth } from '../../hooks/auth'
-import { useBar } from '../../hooks/bar'
+
+
+import { Container, NavSection, IconSection, Icon, Label, LogoutSection } from './styles';
 
 const Sidebar1: React.FC = () => {
+  
   const { closes } = useBar();
   const { signOut } = useAuth();
+
+
   return (
       <Container>
         <MenuOpenIcon

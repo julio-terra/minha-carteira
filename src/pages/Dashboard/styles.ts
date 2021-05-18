@@ -1,7 +1,10 @@
 import styled, { keyframes } from 'styled-components';
+
 import colors from '../../styles/colors';
+
 import ArrowUp from '../../assets/arrow-up.svg';
 import ArrowDown from '../../assets/arrow-down.svg';
+import Dollar from '../../assets/dollar.svg';
 
 
 export const Container = styled.div`
@@ -9,32 +12,52 @@ export const Container = styled.div`
 `;
 export const Box = styled.div`
   width: 100vw;
+  
   overflow: hidden;
 `;
 export const PageContainer = styled.div`
   width: 100%;
   height: 100%;
+  min-height: 100vh; 
+
   background-color: ${colors.primaryGradient};
 
   display: flex;
   flex-direction: column;
 `;
+export const Topbar = styled.div`
+  width: 90%;
+  
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin: 20px 0 0 5%;
+`;
+export const Tittle = styled.h1`
+  color: white;
+`;
 export const Select = styled.select`
   width: 150px;
   height: 35px;
+  font-size: 14px;
+
   background: white;
   color: black;
-  font-size: 14px;
+
   border-radius: 5px;
+
   outline: none;
-  margin-left: 5%;
 
   option {
+    min-height: 20px;
+
     color: black;
     background: white;
+
     display: flex;
+
     white-space: pre;
-    min-height: 20px;
     padding: 0px 2px 1px;
   }
 `
@@ -63,8 +86,8 @@ export const Balance = styled.div`
     margin: 10px;
     height: 140px;
     
-    
-    background-color: #4649AE;
+    background: url(${Dollar}) #4649AE no-repeat right;
+    background-size: 25%;
 
     border-radius: 10px;
 
@@ -106,8 +129,31 @@ export const Exi = styled.div`
     
     background: url(${ArrowDown}) #FF5400 no-repeat right;
     background-size: 40%;
+
     border-radius: 10px;
     overflow: hidden;
     animation: ${BalanceInputAnimation} 0.2s 0s;
 
+`;
+export const DataTittle = styled.p`
+    font-size: calc(0.3vw + 15px);
+
+    color: white;
+
+    margin: 3%;
+`;
+export const DataValue = styled.h1`
+    font-size: calc(0.3vw + 30px);
+
+    color: white;
+
+    margin-left: 20%;
+    @media(max-width: 768px){
+      margin-left: 10%;
+    }
+`;
+export const PizzaGraph = styled.div`
+    background-color: black;
+    height: 300px;
+    width: 300px;
 `;

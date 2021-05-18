@@ -10,8 +10,15 @@ export const Container = styled.div`
   width: 300px;  
   height: 100vh;
   background-color: ${colors.secondaryGradient};
+
   /* animation: ${animation} 0.3s; */
+
   border-right: 0.5px solid white;
+  @media(max-width: 768px){
+    position: fixed;
+    z-index: 10;
+    animation: ${animation} 0.1s;
+  }
 `;
 export const NavSection = styled.div`
   padding-top: 100px;
@@ -24,7 +31,9 @@ export const NavSection = styled.div`
 export const IconSection = styled.div`
   display: flex;
   flex-direction: row;
+
   margin-left: 30px;
+  
   cursor: pointer;
 `;
 export const Icon = styled.img`
@@ -32,12 +41,15 @@ export const Icon = styled.img`
 `;
 export const Label = styled.h1`
   color: white;
+
   margin-right: 30px;
 `;
 export const LogoutSection = styled.div`
   display: flex;
   flex-direction: row;
+
   margin: 30vh 0 0 30px;
+
   cursor: pointer;
 `;
 export const LogoutIcon = styled.img`
