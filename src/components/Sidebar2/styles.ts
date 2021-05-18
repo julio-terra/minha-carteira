@@ -13,6 +13,7 @@ export const Container = styled.div`
   /* animation: ${animation} 0.3s; */
 
   border-right: 1px solid white;
+
   @media(max-width:768px){
     display: none;
   }

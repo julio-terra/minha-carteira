@@ -8,7 +8,7 @@ to { width: 300px; }
 
 export const Container = styled.div`
   width: 300px;  
-  height: 100vh;
+  height: 114vh;
   background-color: ${colors.secondaryGradient};
 
   /* animation: ${animation} 0.3s; */

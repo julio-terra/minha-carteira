@@ -18,7 +18,11 @@ export const Box = styled.div`
 export const PageContainer = styled.div`
   width: 100%;
   height: 100%;
-  min-height: 100vh; 
+  @media(max-width: 768px){
+    min-height: 100vh;
+  }
+
+  margin-top: 100px;
 
   background-color: ${colors.primaryGradient};
 
@@ -152,8 +156,14 @@ export const DataValue = styled.h1`
       margin-left: 10%;
     }
 `;
-export const PizzaGraph = styled.div`
-    background-color: black;
-    height: 300px;
-    width: 300px;
+export const Graph = styled.div`
+    margin-top: 70px;
+    overflow: auto;
+    @media(min-width: 768px){
+      display: flex;
+      justify-content: center;
+    }
+    @media(max-width: 768px){
+      direction: rtl;
+    }
 `;

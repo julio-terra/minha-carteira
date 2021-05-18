@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 
+
 import { useAuth } from '../../hooks/auth';
 import { useBar } from '../../hooks/bar';
 import UserData from '../../components/UserData';
@@ -11,6 +12,15 @@ import Sidebar1 from '../../components/Sidebar1'
 import Sidebar2 from '../../components/Sidebar2';
 import Header from '../../components/Header';
 
+import {
+        LineChart,
+        Line,
+        XAxis,
+        YAxis,
+        CartesianGrid,
+        Tooltip,
+        Legend
+  } from 'recharts';
 
 import {Container,
         Box,
@@ -24,8 +34,7 @@ import {Container,
         Appet,
         DataTittle,
         DataValue,
-        PizzaGraph
-        
+        Graph
     } from './styles';
 
 
@@ -34,7 +43,6 @@ const Dashboard: React.FC = () => {
     const { logged } = useAuth();
     
     const [month, setmonth] = useState<String>("december");
-
     const listMonth = [
         "december",
         "january",
@@ -43,7 +51,27 @@ const Dashboard: React.FC = () => {
         "April"
     ];
 
+      const data = [
+        {name: 'december',
+        entradas: UserData.appetizer.decemberNumber,
+        saídas: UserData.exits.decemberNumber},
 
+        {name: 'january',
+        entradas: UserData.appetizer.JanuaryNumber,
+        saídas: UserData.exits.JanuaryNumber,},
+
+        {name: 'february',
+        entradas: UserData.appetizer.FebruaryNumber,
+        saídas: UserData.exits.FebruaryNumber},
+        
+        {name: 'march',
+        entradas: UserData.appetizer.MarchNumber,
+        saídas: UserData.exits.MarchNumber},
+        
+        {name: 'april',
+        entradas: UserData.appetizer.AprilNumber ,
+        saídas: UserData.exits.AprilNumber},
+      ];
 
  return(
      <>
@@ -98,13 +126,37 @@ const Dashboard: React.FC = () => {
                             UserData.exits.April
                         }</DataValue>
                     </Exi>
-                    <PizzaGraph></PizzaGraph>
                     </Datas>
+                    <Graph>
+                    <LineChart
+                            width={980}
+                            height={350}
+                            data={data}
+                            margin={{top: 5, right: 30, left: 20, bottom: 5}}
+                            >
+                            <Line
+                            type='monotone'
+                            dataKey='entradas'
+                            stroke='#2afb00'
+                            activeDot={{r: 8}}
+                            />
+                            <Line
+                            type='monotone'
+                            dataKey='saídas'
+                            stroke='#ff0000'
+                            activeDot={{r: 8}}
+                            />
+                        <CartesianGrid strokeDasharray='3 3'/>
+                        <Tooltip/>
+                        <YAxis/>
+                        <XAxis dataKey='name'/>
+                        <Legend />
+                        </LineChart>
+                        </Graph>
                 </PageContainer>
             </Box>
         </Container>
       </>
-
       
       : <Login />}
      </>
