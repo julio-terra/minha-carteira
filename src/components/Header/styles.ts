@@ -13,10 +13,21 @@ export const Container = styled.div`
     align-items: center;
     
     position: fixed;
+    @media(min-width: 768px){
+        justify-content: flex-end;
+    }
     
+`;
+export const Menu = styled.div`
+    @media(min-width: 768px){
+        display: none;
+    }
 `;
 export const OlaName = styled.p`
     color: white;
     font-size: calc(0.8vw + 20px);
     margin-right: 30px;
+    @media(min-width: 768px){
+        margin-right: 100px;
+    }
 `;
