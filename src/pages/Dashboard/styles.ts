@@ -18,9 +18,8 @@ export const Box = styled.div`
 export const PageContainer = styled.div`
   width: 100%;
   height: 100%;
-  @media(max-width: 768px){
-    min-height: 100vh;
-  }
+
+  min-height: 100vh;
 
   margin-top: 100px;
 
@@ -28,9 +27,12 @@ export const PageContainer = styled.div`
 
   display: flex;
   flex-direction: column;
+  @media(min-width: 768px){
+    margin-left: 100px;
+  }
 `;
 export const Topbar = styled.div`
-  width: 90%;
+  width: 80%;
   
   display: flex;
   align-items: center;
@@ -77,11 +79,11 @@ export const Datas = styled.div`
 const BalanceInputAnimation = keyframes`
     0% {
       opacity: 0;
-      transform: translateX(-100%)
+      transform: translateX(-100%);
     }
     100%{
       opacity: 1;
-      transform: translateX(0%)
+      transform: translateX(0%);
     }
 `;
 export const Balance = styled.div`

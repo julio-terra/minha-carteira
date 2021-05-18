@@ -10,15 +10,11 @@ export const Container = styled.div`
   width: 300px;  
   height: 114vh;
   background-color: ${colors.secondaryGradient};
-
-  /* animation: ${animation} 0.3s; */
-
+  
+  position: fixed;
+  z-index: 10;
   border-right: 0.5px solid white;
-  @media(max-width: 768px){
-    position: fixed;
-    z-index: 10;
-    animation: ${animation} 0.1s;
-  }
+  animation: ${animation} 0.1s;
 `;
 export const NavSection = styled.div`
   padding-top: 100px;
